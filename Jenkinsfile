@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+    registry = "exbashorun/devops_capstone"
+    registryCredential = 'dockerhub'
+       } 
     agent {
         docker {
             image 'node:14-slim' 
@@ -11,5 +15,12 @@ pipeline {
                 sh 'npm install' 
             }
         }
+       stage('Building docker image') {
+      steps {
+          script {
+                docker.build registry + ":$BUILD_NUMBER"
+               }
+             }
+          }      
     }
 }
