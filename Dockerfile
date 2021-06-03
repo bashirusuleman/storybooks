@@ -1,4 +1,4 @@
-FROM node:14-slim   # higher versions of node failed in building the image. the app  only works with version 14
+FROM node:14-slim 
 
 WORKDIR /usr/src/app
 
