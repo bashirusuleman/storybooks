@@ -3,8 +3,8 @@ pipeline {
     registry = "exbashorun/devops_capstone"
     registryCredential = 'dockerhub'
        } 
-    agent {
-    stage any
+    agent any
+    stages {
         stage('Build') { 
             steps {
                 sh 'npm install' 
