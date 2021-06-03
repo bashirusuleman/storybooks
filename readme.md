@@ -19,6 +19,6 @@ npm run dev
 npm start
 ```
 
-##App Deployment
+## App Deployment
 
 The original repo was forked and deployment files to docker and kubernetes using helm charts were added. The deployment process involves CI/CD
