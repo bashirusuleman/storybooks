@@ -1,4 +1,4 @@
-# StoryBooks
+# StoryBooks & App Deployment
 
 > Create public and private stories from your life
 
@@ -18,3 +18,7 @@ npm run dev
 # Run in production
 npm start
 ```
+
+##App Deployment
+
+The original repo was forked and deployment files to docker and kubernetes using helm charts were added. The deployment process involves CI/CD
