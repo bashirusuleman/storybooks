@@ -6,7 +6,7 @@ pipeline {
 	  }
 	  agent any
 	  stages {
-	      Stage ('Cloning Git') {
+	      stage ('Cloning Git') {
 	      steps {
 	          git 'https://github.com/bashirusuleman/storybooks.git'
 	          }
