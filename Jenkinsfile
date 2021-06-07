@@ -34,7 +34,7 @@ pipeline {
 
     }
     environment {
-      registry = 'exbashorun / devops_capstone'
+      registry = 'exbashorun/devops_capstone'
       registryCredential = 'dockerhub'
       dockerImage = '${registry + ":$BUILD_NUMBER"}'
     }
