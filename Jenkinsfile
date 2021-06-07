@@ -17,13 +17,13 @@ stage('Building App') {
       }
     }
 	
-	    stage('Building image') {
-	      steps{
-	        script {
-	          dockerImage = docker.build imagename
-	        }
-	      }
-	    }
+	    stage('Building docker image') {
+     		 steps {
+        		script {
+          		docker.build registry + ":$BUILD_NUMBER"
+       			   }
+      			}
+    		      }
 	    stage('Deploy Image') {
 	      steps{
 	        script {
