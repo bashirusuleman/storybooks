@@ -23,16 +23,16 @@ pipeline {
                }
              }
           }
-       stage('Pushing Image to DockerHub') {
-          steps{
-             script {
-                docker.withRegistry( '', registryCredential ) {
-                dockerImage.push()
-              }
+       stage('Push Image to DockerHub') { 
+            steps { 
+                script { 
+                    docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+                    }
+                } 
             }
-          }   
-        }
-      stage('Remove Unused docker image') {
+        } 
+       stage('Remove Unused docker image') {
           steps{
              sh "docker rmi $registry:$BUILD_NUMBER"
           }
