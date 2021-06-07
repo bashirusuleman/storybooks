@@ -1,6 +1,6 @@
 pipeline {
     environment {
-    registry = "exbashorun/devops_capstone"
+    registry = "exbashorun/employeemgt"
     registryCredential = 'dockerhub'
     dockerImage = docker.build registry + ":$BUILD_NUMBER"
        } 
