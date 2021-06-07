@@ -24,18 +24,21 @@ pipeline {
 
     stage('Push to DockerHub') {
       steps {
-        sh '''script {
+        script {
+
           docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
           }
-        }'''
-        }
-      }
 
+        }
+
+      }
     }
-    environment {
-      registry = 'exbashorun/devops_capstone'
-      registryCredential = 'dockerhub'
-      dockerImage = '${registry + ":$BUILD_NUMBER"}'
-    }
+
   }
+  environment {
+    registry = 'exbashorun/devops_capstone'
+    registryCredential = 'dockerhub'
+    dockerImage = '${registry + ":$BUILD_NUMBER"}'
+  }
+}
