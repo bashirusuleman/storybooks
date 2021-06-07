@@ -20,7 +20,7 @@ stage('Building App') {
 	    stage('Building docker image') {
      		 steps {
         		script {
-          		docker.build registry + ":$BUILD_NUMBER"
+          		docker.build imagename + ":$BUILD_NUMBER"
        			   }
       			}
     		      }
