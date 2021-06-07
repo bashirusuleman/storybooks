@@ -26,7 +26,7 @@ pipeline {
        stage('Push Image to DockerHub') { 
             steps { 
                 script { 
-                    withRegistry( '', registryCredential ) { 
+                     withDockerRegistry( '', registryCredential ) { 
                         dockerImage.push() 
                     }
                 } 
