@@ -1,7 +1,7 @@
 pipeline {
 	  environment {
-	    imagename = " exbashorun/devops_capstone "
-	    registryCredential = ‘dockerhub'
+	    imagename = "exbashorun/devops_capstone"
+	    registryCredential = 'dockerhub'
 	    dockerImage = ''
 	  }
 	  agent any
