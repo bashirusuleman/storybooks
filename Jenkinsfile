@@ -1,6 +1,6 @@
 pipeline {
 	  environment {
-	    imagename = "exbashorun/devops_capstone"
+	    imagename = "exbashorun/devopscapstone"
 	    registryCredential = 'dockerhub'
 	    dockerImage = ''
 	  }
