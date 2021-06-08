@@ -29,9 +29,9 @@ pipeline {
             dockerImage.push()
           }
         }
-
       }
     }
+ }
    
   environment {
     registry = 'exbashorun/devopscapstone'
