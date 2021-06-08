@@ -32,15 +32,7 @@ pipeline {
 
       }
     }
-
-    stage('Remove Unused docker image') {
-      steps {
-        sh "docker rmi $imagename:$BUILD_NUMBER"
-        sh "docker rmi $imagename:latest"
-      }
-    }
-
-  }
+   
   environment {
     registry = 'exbashorun/devopscapstone'
     registryCredential = 'dockerhub'
