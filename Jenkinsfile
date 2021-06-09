@@ -32,6 +32,8 @@ pipeline {
     }
     stage('Deploy EKS') {
       steps {
+       sh 'aws sts get-caller-identity'
+       sh 'aws eks --region us-east-1 update-kubeconfig --name capstone-cluster'
        sh 'helm upgrade --install capstone  -f /tmp/capstonehelm/values.yaml /tmp/capstonehelm/'
       }
     }
