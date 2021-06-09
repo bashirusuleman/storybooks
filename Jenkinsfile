@@ -1,4 +1,3 @@
-def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws']]
 pipeline {
   agent any
   stages {
@@ -31,12 +30,12 @@ pipeline {
         }
       }
     }
-    stage('Deploy EKS') {
+    stage('Deploy to EKS') {
       steps {
        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {  
        sh 'aws sts get-caller-identity'
        sh 'aws eks --region us-east-1 update-kubeconfig --name capstone-cluster'
-       sh 'helm install capstone  /tmp/capstonehelm/'
+       sh 'helm upgrade --install  capstone  -f capstonehelm/values.yaml capstonehelm/'
           }
       }
     }
