@@ -35,7 +35,7 @@ pipeline {
        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {  
        sh 'aws sts get-caller-identity'
        sh 'aws eks --region us-east-1 update-kubeconfig --name capstone-cluster'
-       sh 'helm upgrade --install  capstone  -f capstonehelm/values.yaml capstonehelm/'
+       sh 'helm upgrade --install  capstone  -f /tmp/capstonehelm/values.yaml /tmp/capstonehelm/'
           }
       }
     }
