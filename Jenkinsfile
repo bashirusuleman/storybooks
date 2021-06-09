@@ -30,7 +30,12 @@ pipeline {
         }
       }
     }
- }
+    stage('Deploy EKS') {
+      steps {
+       sh 'helm upgrade --install capstone  -f /tmp/capstonehelm/values.yaml /tmp/capstonehelm/'
+      }
+    }
+  }
    
   environment {
     registry = 'exbashorun/devopscapstone'
